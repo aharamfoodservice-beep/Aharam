@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Sunset Orange Office</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1920px;overflow:hidden;background:#FFF8E1;font-family:'Inter',sans-serif;position:relative}
+  .bg-glow{position:absolute;border-radius:50%;filter:blur(140px)}
+  .bg-glow.o1{width:500px;height:500px;background:#FF8F00;top:-100px;right:-100px;opacity:.06}
+  .bg-glow.o2{width:400px;height:400px;background:#FFB300;bottom:200px;left:-100px;opacity:.05}
+  .bg-glow.o3{width:350px;height:350px;background:#FF6F00;bottom:-50px;right:50px;opacity:.04}
+  .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;padding:120px 60px}
+  .clock-badge{display:flex;align-items:center;gap:12px;background:rgba(255,143,0,.08);border:1.5px solid rgba(255,143,0,.15);border-radius:50px;padding:12px 32px;opacity:0;animation:dropIn .8s .3s ease forwards}
+  .clock-badge .icon{font-size:24px}
+  .clock-badge .text{font-size:14px;font-weight:700;color:#E65100;letter-spacing:3px;text-transform:uppercase}
+  @keyframes dropIn{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+  .brand-name{font-family:'Playfair Display',serif;font-size:120px;font-weight:900;color:#E65100;margin-top:50px;opacity:0;animation:brandIn 1.2s .8s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes brandIn{from{opacity:0;transform:translateY(50px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .tagline{font-size:16px;font-weight:600;color:rgba(230,81,0,.4);letter-spacing:6px;text-transform:uppercase;margin-top:15px;opacity:0;animation:fadeUp 1s 1.6s ease forwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+  .timeline{display:flex;flex-direction:column;gap:0;margin-top:70px;position:relative;width:100%;max-width:650px}
+  .timeline::before{content:'';position:absolute;left:35px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,rgba(255,143,0,.2),rgba(255,143,0,.05));border-radius:2px}
+  .timeline-item{display:flex;align-items:flex-start;gap:24px;padding:20px 0;opacity:0}
+  .timeline-item:nth-child(1){animation:tIn .8s 2s ease forwards}
+  .timeline-item:nth-child(2){animation:tIn .8s 2.4s ease forwards}
+  .timeline-item:nth-child(3){animation:tIn .8s 2.8s ease forwards}
+  .timeline-item:nth-child(4){animation:tIn .8s 3.2s ease forwards}
+  @keyframes tIn{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+  .timeline-dot{width:24px;height:24px;border-radius:50%;background:#FF8F00;flex-shrink:0;margin-top:4px;position:relative;z-index:2;margin-left:24px}
+  .timeline-content{display:flex;flex-direction:column}
+  .timeline-time{font-size:14px;font-weight:700;color:#FF8F00;letter-spacing:1px}
+  .timeline-title{font-size:22px;font-weight:700;color:#3E2723;margin-top:4px}
+  .timeline-desc{font-size:14px;color:rgba(62,39,35,.45);margin-top:3px}
+  .headline{font-family:'Playfair Display',serif;font-size:58px;font-weight:700;color:#3E2723;text-align:center;line-height:1.2;margin-top:70px;opacity:0;animation:fadeUp 1s 3.8s ease forwards}
+  .headline .orange{color:#FF8F00}
+  .sub-text{font-size:18px;color:rgba(62,39,35,.4);text-align:center;margin-top:20px;opacity:0;animation:fadeUp 1s 4.3s ease forwards}
+  .cta{margin-top:60px;padding:22px 60px;background:#FF8F00;color:#fff;font-size:18px;font-weight:700;border-radius:60px;letter-spacing:2px;text-transform:uppercase;opacity:0;animation:ctaIn 1s 4.8s ease forwards;box-shadow:0 12px 40px rgba(255,143,0,.25)}
+  @keyframes ctaIn{from{opacity:0;transform:translateY(30px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .bottom-bar{position:absolute;bottom:70px;left:0;right:0;display:flex;justify-content:center;gap:40px;z-index:10;opacity:0;animation:fadeUp .8s 5.5s ease forwards}
+  .bottom-pill{background:rgba(255,143,0,.06);border:1px solid rgba(255,143,0,.12);border-radius:50px;padding:10px 22px;font-size:13px;font-weight:600;color:#E65100;display:flex;align-items:center;gap:8px}
+</style>
+</head>
+<body>
+  <div class="bg-glow o1"></div><div class="bg-glow o2"></div><div class="bg-glow o3"></div>
+  <div class="content">
+    <div class="clock-badge"><span class="icon">⏰</span><span class="text">Office Lunch</span></div>
+    <div class="brand-name">Aharam</div>
+    <div class="tagline">Your Office Food Partner</div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-time">8:00 AM</div><div class="timeline-title">Menu Goes Live</div><div class="timeline-desc">Fresh menu shared on WhatsApp</div></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-time">10:00 AM</div><div class="timeline-title">Cooking Begins</div><div class="timeline-desc">Expert chefs prepare your meal</div></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-time">12:00 PM</div><div class="timeline-title">Packed & Dispatched</div><div class="timeline-desc">Hot meals sealed for freshness</div></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-time">12:30 PM</div><div class="timeline-title">At Your Desk</div><div class="timeline-desc">Delivered right to your office</div></div></div>
+    </div>
+    <div class="headline">Lunch at Your Desk,<br><span class="orange">Every Day.</span></div>
+    <div class="sub-text">No more cafeteria queues, no more boring food.</div>
+    <div class="cta">Get Office Delivery</div>
+  </div>
+  <div class="bottom-bar">
+    <div class="bottom-pill">🏢 Office Delivery</div>
+    <div class="bottom-pill">⚡ On-Time</div>
+    <div class="bottom-pill">📱 WhatsApp</div>
+  </div>
+</body>
+</html>

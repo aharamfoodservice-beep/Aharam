@@ -19,7 +19,7 @@ export default function Plans() {
     },
     {
       title: "Monthly Elite",
-      duration: "24Weekdays",
+      duration: "24 Weekdays",
       desc: "Maximum value. Zero friction.",
       veg: "₹3,520",
       nonveg: "₹4,400",
@@ -50,12 +50,12 @@ export default function Plans() {
   return (
     <div className="pt-section pb-section container animate-enter d-flex flex-column align-center">
       <div className="text-center mb-5">
-        <h1 className="playfair mb-2" style={{ fontSize: '3.5rem' }}>Subscription Tiers</h1>
+        <h1 className="playfair mb-2 page-title">Subscription Tiers</h1>
         <p className="text-secondary mx-auto" style={{ fontSize: '1.2rem', maxWidth: '600px' }}>
           Uncomplicated pricing for exceptional food. Subscriptions are exclusively processed on weekdays.
         </p>
       </div>
-      <div style={{ width: '100%', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', alignItems: 'center' }}>
+      <div className="plans-grid">
         {plans.map((plan, idx) => (
           <div key={idx} className="pro-card" style={{
             padding: plan.highlight ? '4rem 2.5rem' : '3rem 2.5rem',

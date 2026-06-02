@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Non-Veg Menu Promo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: #0F172A; font-family: 'Inter', sans-serif;
+    position: relative;
+  }
+
+  .bg-glow {
+    position: absolute; border-radius: 50%; filter: blur(140px);
+  }
+  .bg-glow.red { width: 600px; height: 600px; background: #b91c1c; top: -200px; right: -100px; opacity: 0.12; }
+  .bg-glow.orange { width: 500px; height: 500px; background: #ea580c; bottom: -100px; left: -100px; opacity: 0.1; }
+
+  /* Top badge */
+  .top-badge {
+    position: absolute; top: 50px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    color: white; padding: 10px 30px; border-radius: 50px;
+    font-size: 14px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    opacity: 0; animation: dropIn 0.8s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    z-index: 10;
+  }
+
+  @keyframes dropIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(-30px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  /* Food circle */
+  .food-circle {
+    position: absolute; top: 140px; left: 50%; transform: translateX(-50%);
+    width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(234,88,12,0.08) 0%, transparent 70%);
+    border: 2px solid rgba(234,88,12,0.15);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; animation: circleReveal 1.2s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    z-index: 5;
+  }
+
+  @keyframes circleReveal {
+    from { opacity: 0; transform: translateX(-50%) scale(0.7); }
+    to { opacity: 1; transform: translateX(-50%) scale(1); }
+  }
+
+  /* Menu items orbiting */
+  .menu-items {
+    position: absolute; inset: 0;
+  }
+
+  .menu-item {
+    position: absolute;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 16px 22px;
+    display: flex; align-items: center; gap: 14px;
+    opacity: 0;
+    z-index: 20;
+  }
+
+  .menu-item .emoji { font-size: 36px; }
+  .menu-item .info { display: flex; flex-direction: column; }
+  .menu-item .name { color: white; font-weight: 700; font-size: 16px; }
+  .menu-item .desc { color: rgba(255,255,255,0.5); font-size: 12px; margin-top: 3px; }
+
+  .menu-item:nth-child(1) { top: 180px; left: 60px; animation: slideFromLeft 0.8s 1.2s ease forwards; }
+  .menu-item:nth-child(2) { top: 180px; right: 60px; animation: slideFromRight 0.8s 1.6s ease forwards; }
+  .menu-item:nth-child(3) { top: 380px; left: 40px; animation: slideFromLeft 0.8s 2.0s ease forwards; }
+  .menu-item:nth-child(4) { top: 380px; right: 40px; animation: slideFromRight 0.8s 2.4s ease forwards; }
+  .menu-item:nth-child(5) { top: 280px; left: 50%; transform: translateX(-50%); animation: fadeUp 0.8s 2.8s ease forwards; }
+
+  @keyframes slideFromLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideFromRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(30px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  /* Center title area */
+  .center-content {
+    position: absolute; bottom: 100px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+    z-index: 15;
+  }
+
+  .main-title {
+    font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 900;
+    color: white; text-align: center; line-height: 1.15;
+    opacity: 0; animation: titleUp 1s 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .main-title .highlight {
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes titleUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Price card */
+  .price-card {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(234,88,12,0.3);
+    border-radius: 16px;
+    padding: 20px 50px;
+    display: flex; align-items: baseline; gap: 8px;
+    opacity: 0; animation: priceReveal 1s 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes priceReveal {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .price-label { color: rgba(255,255,255,0.5); font-size: 14px; font-weight: 500; }
+  .price-amount { color: white; font-size: 56px; font-weight: 800; }
+  .price-unit { color: rgba(255,255,255,0.4); font-size: 20px; font-weight: 500; }
+
+  /* Bottom brand */
+  .bottom-brand {
+    position: absolute; bottom: 35px; left: 0; right: 0;
+    text-align: center; z-index: 10;
+    opacity: 0; animation: fadeIn 0.8s 4.5s ease forwards;
+  }
+  .bottom-brand .brand {
+    font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700;
+    background: linear-gradient(135deg, #d13d71, #0f9ddb);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .bottom-brand .sub { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 5px; letter-spacing: 2px; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* Floating steam particles */
+  .steam {
+    position: absolute; width: 3px; height: 3px;
+    background: rgba(255,255,255,0.15); border-radius: 50%;
+    animation: steamFloat 4s infinite ease-in-out;
+  }
+  .steam:nth-child(1) { top: 300px; left: 200px; animation-delay: 0s; }
+  .steam:nth-child(2) { top: 250px; left: 400px; animation-delay: 1s; }
+  .steam:nth-child(3) { top: 350px; left: 600px; animation-delay: 2s; }
+  .steam:nth-child(4) { top: 200px; left: 800px; animation-delay: 0.5s; }
+
+  @keyframes steamFloat {
+    0%, 100% { transform: translateY(0); opacity: 0.15; }
+    50% { transform: translateY(-40px); opacity: 0.5; }
+  }
+</style>
+</head>
+<body>
+  <div class="bg-glow red"></div>
+  <div class="bg-glow orange"></div>
+
+  <div class="steam"></div><div class="steam"></div><div class="steam"></div><div class="steam"></div>
+
+  <div class="top-badge">🔥 Non-Veg Menu</div>
+
+  <div class="food-circle"></div>
+
+  <div class="menu-items">
+    <div class="menu-item">
+      <div class="emoji">🍗</div>
+      <div class="info">
+        <div class="name">Chicken Curry</div>
+        <div class="desc">Rich masala gravy, bone-in</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="emoji">🥚</div>
+      <div class="info">
+        <div class="name">Egg Masala</div>
+        <div class="desc">Spiced tomato & onion base</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="emoji">🐟</div>
+      <div class="info">
+        <div class="name">Fish Fry</div>
+        <div class="desc">Crispy pan-fried, fresh catch</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="emoji">🍖</div>
+      <div class="info">
+        <div class="name">Mutton Biryani</div>
+        <div class="desc">Weekend special, aromatic</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="emoji">🍚</div>
+      <div class="info">
+        <div class="name">Steamed Rice + Dal</div>
+        <div class="desc">Served with every meal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="center-content">
+    <div class="main-title">
+      Non-Veg Meals<br>
+      <span class="highlight">Delivered Daily.</span>
+    </div>
+    <div class="price-card">
+      <span class="price-label">Just</span>
+      <span class="price-amount">₹200</span>
+      <span class="price-unit">/day</span>
+    </div>
+  </div>
+
+  <div class="bottom-brand">
+    <div class="brand">Aharam</div>
+    <div class="sub">FRESH • HYGIENIC • ON TIME</div>
+  </div>
+</body>
+</html>

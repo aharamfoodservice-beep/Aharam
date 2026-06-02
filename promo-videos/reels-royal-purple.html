@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Royal Purple Elite</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1920px;overflow:hidden;background:#1A0033;font-family:'Inter',sans-serif;position:relative}
+  .bg-glow{position:absolute;border-radius:50%;filter:blur(160px)}
+  .bg-glow.p1{width:600px;height:600px;background:#7B1FA2;top:-150px;left:-100px;opacity:.1}
+  .bg-glow.p2{width:500px;height:500px;background:#AB47BC;bottom:200px;right:-150px;opacity:.07}
+  .bg-glow.p3{width:400px;height:400px;background:#CE93D8;bottom:-80px;left:100px;opacity:.05}
+  .stars{position:absolute;inset:0;overflow:hidden}
+  .star{position:absolute;width:3px;height:3px;background:#CE93D8;border-radius:50%;animation:twinkle 4s infinite ease-in-out}
+  .star:nth-child(1){top:5%;left:10%;animation-delay:0s}
+  .star:nth-child(2){top:12%;left:80%;animation-delay:1s;width:4px;height:4px}
+  .star:nth-child(3){top:28%;left:55%;animation-delay:2s}
+  .star:nth-child(4){top:45%;left:20%;animation-delay:.5s;width:2px;height:2px}
+  .star:nth-child(5){top:62%;left:75%;animation-delay:1.5s}
+  .star:nth-child(6){top:78%;left:40%;animation-delay:3s;width:4px;height:4px}
+  .star:nth-child(7){top:88%;left:85%;animation-delay:2.5s}
+  .star:nth-child(8){top:35%;left:90%;animation-delay:.8s}
+  @keyframes twinkle{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:1;transform:scale(1.5)}}
+  .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;padding:120px 60px}
+  .elite-badge{background:linear-gradient(135deg,#7B1FA2,#AB47BC);color:#fff;padding:12px 36px;border-radius:50px;font-size:16px;font-weight:700;letter-spacing:3px;text-transform:uppercase;opacity:0;animation:dropIn .8s .3s ease forwards;box-shadow:0 8px 30px rgba(123,31,162,.4)}
+  @keyframes dropIn{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+  .brand-name{font-family:'Playfair Display',serif;font-size:120px;font-weight:900;background:linear-gradient(135deg,#CE93D8,#7B1FA2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:50px;opacity:0;animation:brandIn 1.2s .8s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes brandIn{from{opacity:0;transform:translateY(50px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .tagline{font-size:16px;font-weight:600;color:rgba(206,147,216,.4);letter-spacing:6px;text-transform:uppercase;margin-top:15px;opacity:0;animation:fadeUp 1s 1.6s ease forwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+  .perks{display:flex;flex-direction:column;gap:16px;margin-top:70px;width:100%;max-width:700px}
+  .perk{background:rgba(123,31,162,.1);backdrop-filter:blur(12px);border:1px solid rgba(123,31,162,.2);border-radius:20px;padding:24px 32px;display:flex;align-items:center;gap:20px;opacity:0}
+  .perk:nth-child(1){animation:perkIn .8s 2s ease forwards}
+  .perk:nth-child(2){animation:perkIn .8s 2.3s ease forwards}
+  .perk:nth-child(3){animation:perkIn .8s 2.6s ease forwards}
+  .perk:nth-child(4){animation:perkIn .8s 2.9s ease forwards}
+  .perk:nth-child(5){animation:perkIn .8s 3.2s ease forwards}
+  @keyframes perkIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  .perk .icon{font-size:36px;flex-shrink:0}
+  .perk .info{display:flex;flex-direction:column}
+  .perk .title{color:#E1BEE7;font-weight:700;font-size:20px}
+  .perk .desc{color:rgba(225,190,231,.35);font-size:14px;margin-top:3px}
+  .headline{font-family:'Playfair Display',serif;font-size:58px;font-weight:700;color:#fff;text-align:center;line-height:1.2;margin-top:70px;opacity:0;animation:fadeUp 1s 3.8s ease forwards}
+  .headline .purple{background:linear-gradient(135deg,#CE93D8,#7B1FA2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .cta{margin-top:60px;padding:22px 60px;background:linear-gradient(135deg,#7B1FA2,#AB47BC);color:#fff;font-size:18px;font-weight:700;border-radius:12px;letter-spacing:2px;text-transform:uppercase;opacity:0;animation:ctaIn 1s 4.5s ease forwards;box-shadow:0 12px 40px rgba(123,31,162,.3)}
+  @keyframes ctaIn{from{opacity:0;transform:translateY(30px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .bottom-bar{position:absolute;bottom:70px;left:0;right:0;text-align:center;z-index:10;opacity:0;animation:fadeUp .8s 5.2s ease forwards}
+  .bottom-bar .brand{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:rgba(206,147,216,.3)}
+  .bottom-bar .sub{color:rgba(206,147,216,.15);font-size:12px;margin-top:5px;letter-spacing:3px}
+</style>
+</head>
+<body>
+  <div class="bg-glow p1"></div><div class="bg-glow p2"></div><div class="bg-glow p3"></div>
+  <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+  <div class="content">
+    <div class="elite-badge">👑 Elite Member</div>
+    <div class="brand-name">Aharam</div>
+    <div class="tagline">Exclusive • Premium • Elite</div>
+    <div class="perks">
+      <div class="perk"><div class="icon">🚫</div><div class="info"><div class="title">Zero Delivery Fee</div><div class="desc">Free delivery on every meal</div></div></div>
+      <div class="perk"><div class="icon">⚡</div><div class="info"><div class="title">Priority Delivery</div><div class="desc">Your meal arrives first</div></div></div>
+      <div class="perk"><div class="icon">🎁</div><div class="info"><div class="title">Weekend Specials</div><div class="desc">Exclusive dishes just for elites</div></div></div>
+      <div class="perk"><div class="icon">📞</div><div class="info"><div class="title">Dedicated Support</div><div class="desc">Personal WhatsApp concierge</div></div></div>
+      <div class="perk"><div class="icon">💎</div><div class="info"><div class="title">Monthly Rewards</div><div class="desc">Loyalty perks that grow</div></div></div>
+    </div>
+    <div class="headline">Upgrade to<br><span class="purple">Elite Today.</span></div>
+    <div class="cta">Go Elite Now</div>
+  </div>
+  <div class="bottom-bar"><div class="brand">Aharam</div><div class="sub">THE PREMIUM MEAL EXPERIENCE</div></div>
+</body>
+</html>

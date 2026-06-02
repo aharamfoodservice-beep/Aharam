@@ -5,13 +5,13 @@ export default function Contact() {
   return (
     <div className="pt-section pb-section container animate-enter mt-4">
       <div className="text-center mb-5">
-        <h1 className="playfair mb-2" style={{ fontSize: '3.5rem' }}>Get in Touch</h1>
+        <h1 className="playfair mb-2 page-title">Get in Touch</h1>
         <p className="text-secondary" style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
           Connect with our culinary advisors regarding corporate tier plans, delivery logistics, or ingredient sourcing.
         </p>
       </div>
 
-      <div className="mb-5" style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap' }}>
+      <div className="contact-layout mb-5">
 
         {/* Contact info minimalist cards */}
         <div style={{ flex: '1', minWidth: '300px' }} className="d-flex flex-column gap-3">
@@ -32,7 +32,7 @@ export default function Contact() {
             </div>
             <div>
               <div className="input-label">Concierge Direct</div>
-              <p className="fw-500 m-0 text-sm">+91 96001013363</p>
+              <p className="fw-500 m-0 text-sm">+91-96001-03363</p>
             </div>
           </div>
 

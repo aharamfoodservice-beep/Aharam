@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Ocean Blue Trust</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1920px;overflow:hidden;background:linear-gradient(180deg,#0D47A1 0%,#1565C0 40%,#42A5F5 100%);font-family:'Inter',sans-serif;position:relative}
+  .wave{position:absolute;width:200%;height:200px;bottom:0;left:-50%;background:rgba(255,255,255,.04);border-radius:50% 50% 0 0;animation:wave 8s infinite ease-in-out}
+  .wave:nth-child(2){bottom:30px;opacity:.6;animation-delay:2s;height:180px}
+  .wave:nth-child(3){bottom:60px;opacity:.4;animation-delay:4s;height:160px}
+  @keyframes wave{0%,100%{transform:translateX(0)}50%{transform:translateX(5%)}}
+  .bubbles{position:absolute;inset:0;overflow:hidden}
+  .bubble{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.12);animation:bubbleUp 8s infinite ease-in;opacity:0}
+  .bubble:nth-child(1){width:20px;height:20px;bottom:-20px;left:15%;animation-delay:0s}
+  .bubble:nth-child(2){width:14px;height:14px;bottom:-14px;left:40%;animation-delay:2s}
+  .bubble:nth-child(3){width:18px;height:18px;bottom:-18px;left:65%;animation-delay:1s}
+  .bubble:nth-child(4){width:12px;height:12px;bottom:-12px;left:80%;animation-delay:3s}
+  .bubble:nth-child(5){width:16px;height:16px;bottom:-16px;left:30%;animation-delay:4s}
+  @keyframes bubbleUp{0%{transform:translateY(0);opacity:0}10%{opacity:.5}100%{transform:translateY(-1920px);opacity:0}}
+  .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;padding:120px 60px}
+  .shield-badge{background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:12px 36px;display:flex;align-items:center;gap:12px;opacity:0;animation:dropIn .8s .3s ease forwards}
+  .shield-badge .icon{font-size:24px}
+  .shield-badge .text{font-size:14px;font-weight:700;color:#fff;letter-spacing:3px;text-transform:uppercase}
+  @keyframes dropIn{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+  .brand-name{font-family:'Playfair Display',serif;font-size:120px;font-weight:900;color:#fff;margin-top:50px;opacity:0;animation:brandIn 1.2s .8s cubic-bezier(.16,1,.3,1) forwards;text-shadow:0 4px 30px rgba(0,0,0,.2)}
+  @keyframes brandIn{from{opacity:0;transform:translateY(50px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .tagline{font-size:16px;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:6px;text-transform:uppercase;margin-top:15px;opacity:0;animation:fadeUp 1s 1.6s ease forwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+  .trust-cards{display:flex;flex-direction:column;gap:20px;margin-top:70px;width:100%;max-width:700px}
+  .trust-card{background:rgba(255,255,255,.08);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:28px 32px;display:flex;align-items:center;gap:20px;opacity:0}
+  .trust-card:nth-child(1){animation:cardIn .8s 2s ease forwards}
+  .trust-card:nth-child(2){animation:cardIn .8s 2.4s ease forwards}
+  .trust-card:nth-child(3){animation:cardIn .8s 2.8s ease forwards}
+  .trust-card:nth-child(4){animation:cardIn .8s 3.2s ease forwards}
+  @keyframes cardIn{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
+  .trust-card .icon{font-size:40px;flex-shrink:0}
+  .trust-card .info{display:flex;flex-direction:column}
+  .trust-card .title{color:#fff;font-weight:700;font-size:20px}
+  .trust-card .desc{color:rgba(255,255,255,.45);font-size:14px;margin-top:4px}
+  .headline{font-family:'Playfair Display',serif;font-size:58px;font-weight:700;color:#fff;text-align:center;line-height:1.2;margin-top:70px;opacity:0;animation:fadeUp 1s 3.8s ease forwards}
+  .headline .light{color:rgba(255,255,255,.7)}
+  .cta{margin-top:60px;padding:22px 60px;background:#fff;color:#0D47A1;font-size:18px;font-weight:700;border-radius:60px;letter-spacing:2px;text-transform:uppercase;opacity:0;animation:ctaIn 1s 4.5s ease forwards;box-shadow:0 12px 40px rgba(0,0,0,.15)}
+  @keyframes ctaIn{from{opacity:0;transform:translateY(30px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .bottom-bar{position:absolute;bottom:70px;left:0;right:0;text-align:center;z-index:10;opacity:0;animation:fadeUp .8s 5.2s ease forwards}
+  .bottom-bar .brand{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:rgba(255,255,255,.4)}
+  .bottom-bar .sub{color:rgba(255,255,255,.2);font-size:12px;margin-top:5px;letter-spacing:2px}
+</style>
+</head>
+<body>
+  <div class="wave"></div><div class="wave"></div><div class="wave"></div>
+  <div class="bubbles"><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div></div>
+  <div class="content">
+    <div class="shield-badge"><span class="icon">🛡️</span><span class="text">Trusted by 500+</span></div>
+    <div class="brand-name">Aharam</div>
+    <div class="tagline">Your Trusted Meal Partner</div>
+    <div class="trust-cards">
+      <div class="trust-card"><div class="icon">✅</div><div class="info"><div class="title">FSSAI Certified Kitchen</div><div class="desc">Government approved food safety</div></div></div>
+      <div class="trust-card"><div class="icon">🕐</div><div class="info"><div class="title">98.5% On-Time Delivery</div><div class="desc">Reliable, every single day</div></div></div>
+      <div class="trust-card"><div class="icon">🧑‍🍳</div><div class="info"><div class="title">Expert Home Chefs</div><div class="desc">Authentic homestyle cooking</div></div></div>
+      <div class="trust-card"><div class="icon">💬</div><div class="info"><div class="title">WhatsApp Support</div><div class="desc">Instant help, always available</div></div></div>
+    </div>
+    <div class="headline">Try Your First Meal<br><span class="light">Risk-Free.</span></div>
+    <div class="cta">Start Your Trial</div>
+  </div>
+  <div class="bottom-bar"><div class="brand">Aharam</div><div class="sub">EFFORTLESS MEALS, AT YOUR DOOR</div></div>
+</body>
+</html>

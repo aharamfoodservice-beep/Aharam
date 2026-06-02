@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Testimonials</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1080px;overflow:hidden;background:#0F172A;font-family:'Inter',sans-serif;position:relative}
+  .bg1{position:absolute;width:500px;height:500px;background:#d13d71;border-radius:50%;filter:blur(160px);top:-150px;left:-100px;opacity:.08}
+  .bg2{position:absolute;width:400px;height:400px;background:#0f9ddb;border-radius:50%;filter:blur(140px);bottom:-100px;right:-50px;opacity:.1}
+
+  .header{position:absolute;top:60px;left:0;right:0;text-align:center;z-index:10;opacity:0;animation:fadeDown .8s .3s ease forwards}
+  .header .brand{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;background:linear-gradient(135deg,#d13d71,#0f9ddb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .header .title{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:#fff;margin-top:20px}
+  .header .line{width:60px;height:3px;background:linear-gradient(90deg,#d13d71,#0f9ddb);border-radius:2px;margin:20px auto 0}
+
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+
+  .testimonials{position:absolute;top:300px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;gap:24px;width:850px;z-index:10}
+
+  .tcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px 36px;display:flex;gap:20px;align-items:flex-start;opacity:0}
+  .tcard:nth-child(1){animation:slideRight 1s 1s ease forwards}
+  .tcard:nth-child(2){animation:slideLeft 1s 1.8s ease forwards}
+  .tcard:nth-child(3){animation:slideRight 1s 2.6s ease forwards}
+
+  @keyframes slideRight{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+  @keyframes slideLeft{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
+
+  .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#d13d71,#0f9ddb);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;font-weight:700;flex-shrink:0}
+  .tinfo{flex:1}
+  .tquote{color:rgba(255,255,255,.7);font-size:16px;line-height:1.7;font-style:italic;margin-bottom:12px}
+  .tquote::before{content:'"';font-size:28px;color:#d13d71;margin-right:4px}
+  .tquote::after{content:'"';font-size:28px;color:#0f9ddb;margin-left:4px}
+  .tmeta{display:flex;align-items:center;justify-content:space-between}
+  .tname{color:#fff;font-weight:700;font-size:15px}
+  .trole{color:rgba(255,255,255,.35);font-size:13px;margin-top:2px}
+  .tstars{display:flex;gap:3px;color:#f59e0b;font-size:16px}
+
+  .bottom{position:absolute;bottom:50px;left:0;right:0;text-align:center;z-index:10;opacity:0;animation:fadeIn .8s 3.5s ease forwards}
+  .bottom .cta{display:inline-block;background:linear-gradient(135deg,#d13d71,#0f9ddb);color:#fff;padding:16px 40px;border-radius:12px;font-size:17px;font-weight:700;box-shadow:0 8px 30px rgba(209,61,113,.25)}
+  .bottom .sub{color:rgba(255,255,255,.3);font-size:13px;margin-top:12px;letter-spacing:1px}
+
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+<div class="bg1"></div><div class="bg2"></div>
+
+<div class="header">
+  <div class="brand">Aharam</div>
+  <div class="title">What Subscribers Say</div>
+  <div class="line"></div>
+</div>
+
+<div class="testimonials">
+  <div class="tcard">
+    <div class="avatar">P</div>
+    <div class="tinfo">
+      <div class="tquote">Aharam has completely transformed my weekday lunches. The food is always fresh, hot, and arrives right on time. Worth every rupee!</div>
+      <div class="tmeta">
+        <div><div class="tname">Priya R.</div><div class="trole">Software Engineer</div></div>
+        <div class="tstars">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </div>
+  <div class="tcard">
+    <div class="avatar">K</div>
+    <div class="tinfo">
+      <div class="tquote">As someone who works 12-hour days, Aharam is a lifesaver. No more skipping meals or ordering unhealthy fast food.</div>
+      <div class="tmeta">
+        <div><div class="tname">Karthik M.</div><div class="trole">Startup Founder</div></div>
+        <div class="tstars">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </div>
+  <div class="tcard">
+    <div class="avatar">D</div>
+    <div class="tinfo">
+      <div class="tquote">The monthly elite plan is incredible value. Zero delivery fee and the food quality is consistently excellent.</div>
+      <div class="tmeta">
+        <div><div class="tname">Deepa S.</div><div class="trole">College Professor</div></div>
+        <div class="tstars">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom">
+  <div class="cta">Join 200+ Happy Subscribers →</div>
+  <div class="sub">Subscribe from ₹160/day • Mon-Fri Delivery</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Fresh Green Veg</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1920px; overflow: hidden;
+    background: #FFFFFF; font-family: 'Inter', sans-serif;
+    position: relative;
+  }
+
+  /* Green organic blobs */
+  .bg-blob {
+    position: absolute; border-radius: 50%; filter: blur(120px);
+  }
+  .bg-blob.b1 { width: 500px; height: 500px; background: #2E7D32; top: -100px; left: -100px; opacity: 0.07; }
+  .bg-blob.b2 { width: 600px; height: 600px; background: #66BB6A; bottom: 100px; right: -200px; opacity: 0.06; }
+  .bg-blob.b3 { width: 350px; height: 350px; background: #A5D6A7; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.05; }
+
+  /* Leaf pattern background */
+  .leaf-pattern {
+    position: absolute; inset: 0; overflow: hidden; opacity: 0.04;
+  }
+  .leaf-svg {
+    position: absolute; fill: #2E7D32;
+    animation: leafDrift 10s infinite ease-in-out;
+  }
+  .leaf-svg:nth-child(1) { top: 5%; left: 5%; width: 80px; animation-delay: 0s; }
+  .leaf-svg:nth-child(2) { top: 20%; right: 8%; width: 60px; animation-delay: 2s; transform: rotate(45deg); }
+  .leaf-svg:nth-child(3) { top: 55%; left: 10%; width: 70px; animation-delay: 4s; transform: rotate(-30deg); }
+  .leaf-svg:nth-child(4) { bottom: 15%; right: 12%; width: 90px; animation-delay: 1s; transform: rotate(20deg); }
+  .leaf-svg:nth-child(5) { top: 40%; right: 5%; width: 50px; animation-delay: 3s; transform: rotate(-60deg); }
+  .leaf-svg:nth-child(6) { bottom: 35%; left: 8%; width: 65px; animation-delay: 5s; transform: rotate(70deg); }
+
+  @keyframes leafDrift {
+    0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+    50% { transform: translateY(-15px) rotate(var(--r, 0deg)); }
+  }
+
+  /* Content */
+  .content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    z-index: 10; padding: 120px 60px;
+  }
+
+  /* Top leaf accent */
+  .top-badge {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(46,125,50,0.08);
+    border: 1.5px solid rgba(46,125,50,0.15);
+    border-radius: 50px;
+    padding: 12px 32px;
+    opacity: 0; animation: dropIn 0.8s 0.3s ease forwards;
+  }
+  .top-badge .icon { font-size: 24px; }
+  .top-badge .text {
+    font-size: 14px; font-weight: 700;
+    color: #2E7D32; letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  @keyframes dropIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Brand */
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px; font-weight: 900;
+    color: #2E7D32;
+    margin-top: 50px;
+    opacity: 0; animation: brandIn 1.2s 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  @keyframes brandIn {
+    from { opacity: 0; transform: translateY(40px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .tagline {
+    font-size: 18px; font-weight: 500;
+    color: rgba(46,125,50,0.5);
+    letter-spacing: 6px; text-transform: uppercase;
+    margin-top: 15px;
+    opacity: 0; animation: fadeUp 1s 1.6s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Veggie showcase circle */
+  .veggie-circle {
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 2px solid rgba(46,125,50,0.1);
+    background: rgba(46,125,50,0.03);
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 60px;
+    position: relative;
+    opacity: 0; animation: circleIn 1s 2s ease forwards;
+  }
+
+  @keyframes circleIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .veggie-item {
+    position: absolute; font-size: 50px;
+    opacity: 0; animation: vegPop 0.6s ease forwards;
+  }
+  .veggie-item:nth-child(1) { top: 20px; left: 50%; transform: translateX(-50%); animation-delay: 2.4s; }
+  .veggie-item:nth-child(2) { top: 50%; right: 20px; transform: translateY(-50%); animation-delay: 2.6s; }
+  .veggie-item:nth-child(3) { bottom: 20px; left: 50%; transform: translateX(-50%); animation-delay: 2.8s; }
+  .veggie-item:nth-child(4) { top: 50%; left: 20px; transform: translateY(-50%); animation-delay: 3s; }
+  .veggie-item:nth-child(5) { top: 60px; right: 50px; animation-delay: 3.2s; }
+  .veggie-item:nth-child(6) { bottom: 60px; left: 50px; animation-delay: 3.4s; }
+
+  .veggie-center {
+    font-size: 80px;
+    animation: pulse 3s infinite ease-in-out;
+    opacity: 0; animation: vegPop 0.6s 3.6s ease forwards;
+  }
+
+  @keyframes vegPop {
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  /* Headline */
+  .headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 62px; font-weight: 700;
+    color: #1B5E20; text-align: center;
+    line-height: 1.2; margin-top: 60px;
+    opacity: 0; animation: fadeUp 1s 3.8s ease forwards;
+  }
+  .headline .highlight {
+    color: #2E7D32;
+    background: linear-gradient(135deg, #2E7D32, #66BB6A);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  /* Sub text */
+  .sub-text {
+    font-size: 20px; color: rgba(27,94,32,0.5);
+    text-align: center; margin-top: 25px; line-height: 1.5;
+    opacity: 0; animation: fadeUp 1s 4.3s ease forwards;
+  }
+
+  /* CTA */
+  .cta {
+    margin-top: 60px;
+    padding: 22px 60px;
+    background: #2E7D32;
+    color: white;
+    font-size: 18px; font-weight: 700;
+    border-radius: 60px;
+    letter-spacing: 2px; text-transform: uppercase;
+    opacity: 0; animation: ctaIn 1s 4.8s ease forwards;
+    box-shadow: 0 12px 40px rgba(46,125,50,0.25);
+  }
+
+  @keyframes ctaIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Bottom */
+  .bottom-bar {
+    position: absolute; bottom: 70px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    z-index: 10;
+    opacity: 0; animation: fadeUp 0.8s 5.5s ease forwards;
+  }
+  .bottom-features {
+    display: flex; gap: 30px;
+  }
+  .feature-pill {
+    background: rgba(46,125,50,0.06);
+    border: 1px solid rgba(46,125,50,0.12);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 13px; font-weight: 600;
+    color: #2E7D32;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .bottom-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    color: rgba(46,125,50,0.3);
+    letter-spacing: 4px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-blob b1"></div>
+  <div class="bg-blob b2"></div>
+  <div class="bg-blob b3"></div>
+
+  <div class="leaf-pattern">
+    <svg class="leaf-svg" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+    <svg class="leaf-svg" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+    <svg class="leaf-svg" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+    <svg class="leaf-svg" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+    <svg class="leaf-svg" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+    <svg class="leaf-svg" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+  </div>
+
+  <div class="content">
+    <div class="top-badge">
+      <span class="icon">🌿</span>
+      <span class="text">100% Pure Veg</span>
+    </div>
+
+    <div class="brand-name">Aharam</div>
+    <div class="tagline">Fresh • Natural • Healthy</div>
+
+    <div class="veggie-circle">
+      <div class="veggie-item">🥗</div>
+      <div class="veggie-item">🥕</div>
+      <div class="veggie-item">🍅</div>
+      <div class="veggie-item">🌽</div>
+      <div class="veggie-item">🥒</div>
+      <div class="veggie-item">🫑</div>
+      <div class="veggie-center">🍛</div>
+    </div>
+
+    <div class="headline">
+      Wholesome Veg Meals<br>
+      <span class="highlight">Delivered Daily.</span>
+    </div>
+
+    <div class="sub-text">
+      Farm-fresh ingredients, zero compromise<br>
+      on taste and nutrition.
+    </div>
+
+    <div class="cta">Subscribe Today</div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="bottom-features">
+      <div class="feature-pill">🌱 Farm Fresh</div>
+      <div class="feature-pill">🛡️ FSSAI</div>
+      <div class="feature-pill">⚡ On-Time</div>
+    </div>
+    <div class="bottom-brand">AHARAM</div>
+  </div>
+</body>
+</html>

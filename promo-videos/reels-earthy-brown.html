@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Earthy Brown Nostalgia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1920px;overflow:hidden;background:#FFF8F0;font-family:'Inter',sans-serif;position:relative}
+  .bg-glow{position:absolute;border-radius:50%;filter:blur(140px)}
+  .bg-glow.b1{width:500px;height:500px;background:#4E342E;top:-100px;left:-100px;opacity:.05}
+  .bg-glow.b2{width:400px;height:400px;background:#795548;bottom:200px;right:-100px;opacity:.04}
+  .bg-glow.b3{width:350px;height:350px;background:#8D6E63;bottom:-50px;left:200px;opacity:.03}
+  /* Kolam-inspired decorative pattern */
+  .kolam{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;opacity:.03}
+  .kolam-ring{position:absolute;border-radius:50%;border:2px solid #4E342E}
+  .kolam-ring:nth-child(1){inset:0}
+  .kolam-ring:nth-child(2){inset:60px}
+  .kolam-ring:nth-child(3){inset:120px}
+  .kolam-ring:nth-child(4){inset:180px}
+  .kolam-ring:nth-child(5){inset:240px}
+  .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;padding:120px 60px}
+  .leaf-badge{display:flex;align-items:center;gap:12px;background:rgba(78,52,46,.06);border:1.5px solid rgba(78,52,46,.1);border-radius:50px;padding:12px 32px;opacity:0;animation:dropIn .8s .3s ease forwards}
+  .leaf-badge .icon{font-size:24px}
+  .leaf-badge .text{font-size:14px;font-weight:700;color:#4E342E;letter-spacing:3px;text-transform:uppercase}
+  @keyframes dropIn{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+  .brand-name{font-family:'Playfair Display',serif;font-size:120px;font-weight:900;color:#4E342E;margin-top:50px;opacity:0;animation:brandIn 1.2s .8s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes brandIn{from{opacity:0;transform:translateY(50px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .tagline{font-size:16px;font-weight:600;color:rgba(78,52,46,.35);letter-spacing:6px;text-transform:uppercase;margin-top:15px;opacity:0;animation:fadeUp 1s 1.6s ease forwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+  .divider{display:flex;align-items:center;gap:16px;margin-top:60px;opacity:0;animation:fadeUp 1s 2.2s ease forwards}
+  .divider-line{width:100px;height:1px;background:linear-gradient(90deg,transparent,rgba(78,52,46,.2))}
+  .divider-line.right{background:linear-gradient(270deg,transparent,rgba(78,52,46,.2))}
+  .divider-icon{font-size:28px}
+  .food-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:60px;width:100%;max-width:700px}
+  .food-item{background:rgba(78,52,46,.04);border:1px solid rgba(78,52,46,.08);border-radius:20px;padding:28px;text-align:center;opacity:0}
+  .food-item:nth-child(1){animation:foodIn .8s 2.6s ease forwards}
+  .food-item:nth-child(2){animation:foodIn .8s 2.8s ease forwards}
+  .food-item:nth-child(3){animation:foodIn .8s 3s ease forwards}
+  .food-item:nth-child(4){animation:foodIn .8s 3.2s ease forwards}
+  .food-item:nth-child(5){animation:foodIn .8s 3.4s ease forwards}
+  .food-item:nth-child(6){animation:foodIn .8s 3.6s ease forwards}
+  @keyframes foodIn{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+  .food-item .emoji{font-size:48px}
+  .food-item .name{color:#4E342E;font-weight:700;font-size:18px;margin-top:10px}
+  .food-item .desc{color:rgba(78,52,46,.35);font-size:13px;margin-top:4px}
+  .headline{font-family:'Playfair Display',serif;font-size:58px;font-weight:700;color:#3E2723;text-align:center;line-height:1.2;margin-top:60px;opacity:0;animation:fadeUp 1s 4s ease forwards}
+  .headline .brown{color:#4E342E}
+  .sub-text{font-size:18px;color:rgba(62,39,35,.35);text-align:center;margin-top:15px;line-height:1.5;opacity:0;animation:fadeUp 1s 4.5s ease forwards;font-style:italic}
+  .cta{margin-top:50px;padding:22px 60px;background:#4E342E;color:#FFF8F0;font-size:18px;font-weight:700;border-radius:60px;letter-spacing:2px;text-transform:uppercase;opacity:0;animation:ctaIn 1s 5s ease forwards;box-shadow:0 12px 40px rgba(78,52,46,.2)}
+  @keyframes ctaIn{from{opacity:0;transform:translateY(30px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .bottom-bar{position:absolute;bottom:70px;left:0;right:0;text-align:center;z-index:10;opacity:0;animation:fadeUp .8s 5.8s ease forwards}
+  .bottom-bar .brand{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:rgba(78,52,46,.25)}
+  .bottom-bar .sub{color:rgba(78,52,46,.15);font-size:12px;margin-top:5px;letter-spacing:3px}
+</style>
+</head>
+<body>
+  <div class="bg-glow b1"></div><div class="bg-glow b2"></div><div class="bg-glow b3"></div>
+  <div class="kolam"><div class="kolam-ring"></div><div class="kolam-ring"></div><div class="kolam-ring"></div><div class="kolam-ring"></div><div class="kolam-ring"></div></div>
+  <div class="content">
+    <div class="leaf-badge"><span class="icon">🍃</span><span class="text">South Indian</span></div>
+    <div class="brand-name">Aharam</div>
+    <div class="tagline">Amma's Kitchen • Your Door</div>
+    <div class="divider"><div class="divider-line"></div><div class="divider-icon">🪔</div><div class="divider-line right"></div></div>
+    <div class="food-grid">
+      <div class="food-item"><div class="emoji">🍚</div><div class="name">Sambar Rice</div><div class="desc">Classic comfort</div></div>
+      <div class="food-item"><div class="emoji">🥘</div><div class="name">Rasam</div><div class="desc">Tangy & soothing</div></div>
+      <div class="food-item"><div class="emoji">🫓</div><div class="name">Chapati</div><div class="desc">Soft & warm</div></div>
+      <div class="food-item"><div class="emoji">🥗</div><div class="name">Poriyal</div><div class="desc">Fresh veggies</div></div>
+      <div class="food-item"><div class="emoji">🍛</div><div class="name">Kootu</div><div class="desc">Traditional gravy</div></div>
+      <div class="food-item"><div class="emoji">🥛</div><div class="name">Buttermilk</div><div class="desc">Cooling finish</div></div>
+    </div>
+    <div class="headline">Taste of<br><span class="brown">Home.</span></div>
+    <div class="sub-text">"Like amma's cooking, delivered daily."</div>
+    <div class="cta">Relive the Taste</div>
+  </div>
+  <div class="bottom-bar"><div class="brand">Aharam</div><div class="sub">AUTHENTIC SOUTH INDIAN MEALS</div></div>
+</body>
+</html>

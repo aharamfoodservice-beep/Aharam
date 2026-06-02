@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Rose Gold Luxury</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1920px;overflow:hidden;background:#1A0A10;font-family:'Inter',sans-serif;position:relative}
+  .orb{position:absolute;border-radius:50%;filter:blur(140px)}
+  .orb.o1{width:700px;height:700px;background:#B76E79;top:-250px;left:-150px;opacity:.25;animation:gp 7s infinite ease-in-out}
+  .orb.o2{width:500px;height:500px;background:#E8A0AE;bottom:200px;right:-200px;opacity:.15;animation:gp 9s 2s infinite ease-in-out}
+  .orb.o3{width:400px;height:400px;background:#D4A574;top:40%;left:50%;opacity:.1;animation:gp 6s 4s infinite ease-in-out}
+  @keyframes gp{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+  .sparkles{position:absolute;inset:0;overflow:hidden}
+  .sp{position:absolute;width:4px;height:4px;background:#E8A0AE;border-radius:50%;animation:tw 4s infinite ease-in-out}
+  .sp:nth-child(1){top:8%;left:12%;animation-delay:0s}.sp:nth-child(2){top:18%;left:82%;animation-delay:1s;width:5px;height:5px}
+  .sp:nth-child(3){top:35%;left:25%;animation-delay:2s}.sp:nth-child(4){top:48%;left:70%;animation-delay:.5s;width:3px;height:3px}
+  .sp:nth-child(5){top:62%;left:88%;animation-delay:1.5s}.sp:nth-child(6){top:75%;left:35%;animation-delay:3s;width:6px;height:6px}
+  .sp:nth-child(7){top:85%;left:65%;animation-delay:2.5s}.sp:nth-child(8){top:42%;left:8%;animation-delay:.8s}
+  @keyframes tw{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.9;transform:scale(2)}}
+  .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;padding:100px 60px}
+  .crown{font-size:80px;opacity:0;animation:di .8s .3s ease forwards}
+  @keyframes di{from{opacity:0;transform:translateY(-40px) scale(.7)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .brand{font-family:'Playfair Display',serif;font-size:140px;font-weight:900;background:linear-gradient(135deg,#E8A0AE,#B76E79,#D4A574);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:30px;opacity:0;animation:br 1.5s .8s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes br{from{opacity:0;transform:translateY(60px) scale(.85)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .subtitle{font-size:18px;font-weight:600;color:rgba(232,160,174,.4);letter-spacing:8px;text-transform:uppercase;margin-top:15px;opacity:0;animation:fu 1s 1.8s ease forwards}
+  @keyframes fu{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  .ornament{display:flex;align-items:center;gap:16px;margin:50px 0;opacity:0;animation:fu 1s 2.2s ease forwards}
+  .orn-line{width:140px;height:1px;background:linear-gradient(90deg,transparent,#B76E79,transparent)}
+  .orn-dot{width:8px;height:8px;background:#B76E79;border-radius:50%}
+  .hero-text{font-family:'Playfair Display',serif;font-size:66px;font-weight:700;color:#fff;text-align:center;line-height:1.2;opacity:0;animation:fu 1.2s 2.6s ease forwards}
+  .hero-text .rose{background:linear-gradient(135deg,#E8A0AE,#D4A574);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .desc{font-size:22px;color:rgba(232,160,174,.35);text-align:center;line-height:1.6;margin-top:35px;max-width:700px;opacity:0;animation:fu 1s 3.3s ease forwards}
+  .pills{display:flex;gap:16px;margin-top:50px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fu 1s 3.8s ease forwards}
+  .pill{background:rgba(183,110,121,.08);backdrop-filter:blur(15px);border:1px solid rgba(183,110,121,.18);border-radius:50px;padding:14px 28px;display:flex;align-items:center;gap:10px;color:#E8A0AE;font-size:15px;font-weight:700}
+  .pill .emoji{font-size:20px}
+  .cta{margin-top:60px;padding:24px 70px;background:linear-gradient(135deg,#B76E79,#D4A574);color:#fff;font-size:19px;font-weight:800;letter-spacing:3px;text-transform:uppercase;border-radius:60px;box-shadow:0 16px 50px rgba(183,110,121,.3);opacity:0;animation:cp 1s 4.4s cubic-bezier(.16,1,.3,1) forwards;position:relative;overflow:hidden}
+  .cta::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,.12) 50%,transparent 60%);animation:sh 3s 5.5s infinite}
+  @keyframes sh{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+  @keyframes cp{from{opacity:0;transform:translateY(40px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .bottom{position:absolute;bottom:80px;left:0;right:0;text-align:center;z-index:10;opacity:0;animation:fu .8s 5.2s ease forwards}
+  .bottom .b-brand{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:rgba(183,110,121,.3);letter-spacing:6px}
+  .bottom .b-sub{font-size:12px;color:rgba(183,110,121,.18);letter-spacing:3px;text-transform:uppercase;margin-top:6px}
+</style>
+</head>
+<body>
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="sparkles"><div class="sp"></div><div class="sp"></div><div class="sp"></div><div class="sp"></div><div class="sp"></div><div class="sp"></div><div class="sp"></div><div class="sp"></div></div>
+  <div class="content">
+    <div class="crown">👑</div>
+    <div class="brand">Aharam</div>
+    <div class="subtitle">Premium Food Service</div>
+    <div class="ornament"><div class="orn-line"></div><div class="orn-dot"></div><div class="orn-line"></div></div>
+    <div class="hero-text">Chef-Crafted Meals,<br><span class="rose">Delivered with Love.</span></div>
+    <div class="desc">Every dish made by expert home chefs<br>with the finest ingredients, just for you.</div>
+    <div class="pills">
+      <div class="pill"><span class="emoji">🧑‍🍳</span>Expert Chefs</div>
+      <div class="pill"><span class="emoji">🌿</span>Farm Fresh</div>
+      <div class="pill"><span class="emoji">🛡️</span>FSSAI Safe</div>
+      <div class="pill"><span class="emoji">⏰</span>Always On-Time</div>
+    </div>
+    <div class="cta">Try Aharam Today</div>
+  </div>
+  <div class="bottom"><div class="b-brand">AHARAM</div><div class="b-sub">The Art of Home-Cooked Meals</div></div>
+</body>
+</html>

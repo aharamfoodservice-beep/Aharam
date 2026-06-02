@@ -16,14 +16,14 @@ export default function FAQ() {
     },
     {
       title: "Wallet Usage & Expiry",
-      desc: "Wallet credits can be seamlessy applied toward any future subscription tier. Please note, strictly enforced, all wallet balances automatically expire 90 days from the moment of credit."
+      desc: "Wallet credits can be seamlessly applied toward any future subscription tier. Please note, strictly enforced, all wallet balances automatically expire 90 days from the moment of credit."
     }
   ];
 
   return (
     <div className="pt-section pb-section container animate-enter d-flex flex-column align-center">
       <div className="text-center mb-5">
-        <h1 className="playfair mb-2" style={{ fontSize: '3.5rem' }}>Policies & FAQ</h1>
+        <h1 className="playfair mb-2 page-title">Policies & FAQ</h1>
         <p className="text-secondary mx-auto" style={{ fontSize: '1.2rem', maxWidth: '600px' }}>
           Transparent, uncompromising standards regarding our scheduling and payment processing.
         </p>

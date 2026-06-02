@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Magenta Burst</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1920px;overflow:hidden;background:#1A0014;font-family:'Inter',sans-serif;position:relative}
+  .orb{position:absolute;border-radius:50%;filter:blur(140px)}
+  .orb.m1{width:700px;height:700px;background:#880E4F;top:-200px;right:-100px;opacity:.3;animation:gp 8s infinite ease-in-out}
+  .orb.m2{width:500px;height:500px;background:#E91E63;bottom:300px;left:-200px;opacity:.15;animation:gp 10s 3s infinite ease-in-out}
+  .orb.m3{width:450px;height:450px;background:#F48FB1;bottom:-100px;right:50px;opacity:.1;animation:gp 7s 5s infinite ease-in-out}
+  @keyframes gp{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+  /* Petal particles */
+  .petals{position:absolute;inset:0;overflow:hidden}
+  .petal{position:absolute;width:20px;height:20px;background:radial-gradient(ellipse,rgba(233,30,99,.3),transparent);border-radius:50% 0 50% 0;animation:fall 10s infinite linear;opacity:0}
+  .petal:nth-child(1){left:10%;animation-delay:0s;width:24px;height:24px}.petal:nth-child(2){left:30%;animation-delay:2s}
+  .petal:nth-child(3){left:50%;animation-delay:1s;width:16px;height:16px}.petal:nth-child(4){left:70%;animation-delay:3.5s}
+  .petal:nth-child(5){left:85%;animation-delay:2.5s;width:22px;height:22px}.petal:nth-child(6){left:45%;animation-delay:4s}
+  .petal:nth-child(7){left:20%;animation-delay:5.5s;width:18px;height:18px}.petal:nth-child(8){left:65%;animation-delay:6s}
+  @keyframes fall{0%{transform:translateY(-50px) rotate(0deg);opacity:0}5%{opacity:.4}50%{opacity:.2}100%{transform:translateY(2000px) rotate(720deg);opacity:0}}
+  .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;padding:100px 60px}
+  .fresh-badge{display:flex;align-items:center;gap:12px;background:rgba(233,30,99,.1);backdrop-filter:blur(20px);border:1.5px solid rgba(233,30,99,.2);border-radius:60px;padding:14px 36px;opacity:0;animation:sd 1s .3s ease forwards}
+  .fresh-badge .text{font-size:15px;font-weight:800;color:#F48FB1;letter-spacing:4px;text-transform:uppercase}
+  @keyframes sd{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+  .brand{font-family:'Playfair Display',serif;font-size:140px;font-weight:900;background:linear-gradient(135deg,#F8BBD0,#E91E63,#F48FB1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:50px;opacity:0;animation:br 1.5s .8s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes br{from{opacity:0;transform:translateY(60px) scale(.85)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .tagline{font-size:17px;font-weight:600;color:rgba(244,143,177,.35);letter-spacing:8px;text-transform:uppercase;margin-top:12px;opacity:0;animation:fu 1s 1.8s ease forwards}
+  @keyframes fu{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  /* Vertical timeline */
+  .timeline{display:flex;flex-direction:column;align-items:center;margin-top:60px;position:relative;gap:0;width:100%;max-width:700px}
+  .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,rgba(233,30,99,.2),rgba(233,30,99,.05));transform:translateX(-50%)}
+  .tl-item{display:flex;align-items:center;width:100%;opacity:0;padding:16px 0}
+  .tl-item:nth-child(odd){flex-direction:row}.tl-item:nth-child(even){flex-direction:row-reverse}
+  .tl-item:nth-child(1){animation:ti .8s 2.2s ease forwards}.tl-item:nth-child(2){animation:ti .8s 2.6s ease forwards}
+  .tl-item:nth-child(3){animation:ti .8s 3s ease forwards}.tl-item:nth-child(4){animation:ti .8s 3.4s ease forwards}
+  @keyframes ti{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .tl-content{flex:1;padding:0 30px}
+  .tl-content .t{font-size:20px;font-weight:800;color:#F8BBD0}.tl-content .d{font-size:14px;color:rgba(248,187,208,.3);margin-top:4px}
+  .tl-dot{width:48px;height:48px;border-radius:50%;background:rgba(233,30,99,.15);border:2px solid rgba(233,30,99,.3);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;z-index:2}
+  .tl-item:nth-child(odd) .tl-content{text-align:right}.tl-item:nth-child(even) .tl-content{text-align:left}
+  .headline{font-family:'Playfair Display',serif;font-size:66px;font-weight:700;color:#fff;text-align:center;line-height:1.15;margin-top:60px;opacity:0;animation:fu 1.2s 3.8s ease forwards}
+  .headline .magenta{background:linear-gradient(135deg,#F48FB1,#E91E63);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .cta{margin-top:50px;padding:24px 70px;background:linear-gradient(135deg,#880E4F,#E91E63);color:#fff;font-size:19px;font-weight:800;letter-spacing:3px;text-transform:uppercase;border-radius:60px;box-shadow:0 16px 50px rgba(233,30,99,.3);opacity:0;animation:cp 1s 4.5s cubic-bezier(.16,1,.3,1) forwards;position:relative;overflow:hidden}
+  .cta::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,.12) 50%,transparent 60%);animation:sh 3s 5.5s infinite}
+  @keyframes sh{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+  @keyframes cp{from{opacity:0;transform:translateY(40px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .bottom{position:absolute;bottom:80px;left:0;right:0;text-align:center;z-index:10;opacity:0;animation:fu .8s 5.2s ease forwards}
+  .bottom .b-brand{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:rgba(244,143,177,.25)}.bottom .b-sub{font-size:12px;color:rgba(244,143,177,.12);margin-top:6px;letter-spacing:3px;text-transform:uppercase}
+</style>
+</head>
+<body>
+  <div class="orb m1"></div><div class="orb m2"></div><div class="orb m3"></div>
+  <div class="petals"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
+  <div class="content">
+    <div class="fresh-badge"><span style="font-size:24px">🌸</span><span class="text">Daily Fresh Meals</span></div>
+    <div class="brand">Aharam</div>
+    <div class="tagline">Fresh • Hot • On-Time</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-content"><div class="t">Fresh Ingredients</div><div class="d">Sourced daily from local markets</div></div><div class="tl-dot">🌿</div><div class="tl-content"></div></div>
+      <div class="tl-item"><div class="tl-content"></div><div class="tl-dot">🧑‍🍳</div><div class="tl-content"><div class="t">Cooked to Perfection</div><div class="d">Expert home chefs, authentic recipes</div></div></div>
+      <div class="tl-item"><div class="tl-content"><div class="t">Sealed & Sanitized</div><div class="d">Hygienic packaging, zero contamination</div></div><div class="tl-dot">🧼</div><div class="tl-content"></div></div>
+      <div class="tl-item"><div class="tl-content"></div><div class="tl-dot">🚀</div><div class="tl-content"><div class="t">Delivered On-Time</div><div class="d">Hot meals at your door, guaranteed</div></div></div>
+    </div>
+    <div class="headline">From Kitchen<br><span class="magenta">To Doorstep.</span></div>
+    <div class="cta">Get Started</div>
+  </div>
+  <div class="bottom"><div class="b-brand">Aharam</div><div class="b-sub">Freshness Delivered Daily</div></div>
+</body>
+</html>

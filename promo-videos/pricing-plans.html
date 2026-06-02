@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Plans & Pricing</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1080px;overflow:hidden;background:#0F172A;font-family:'Inter',sans-serif;position:relative}
+  .bg1{position:absolute;width:400px;height:400px;background:#d13d71;border-radius:50%;filter:blur(150px);top:50%;left:-100px;opacity:.1}
+  .bg2{position:absolute;width:500px;height:500px;background:#0f9ddb;border-radius:50%;filter:blur(150px);top:-100px;right:-100px;opacity:.08}
+  .header{position:absolute;top:50px;left:0;right:0;text-align:center;z-index:10;opacity:0;animation:fadeDown 1s .3s ease forwards}
+  .header .label{font-size:13px;font-weight:700;letter-spacing:4px;text-transform:uppercase;background:linear-gradient(135deg,#d13d71,#0f9ddb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .header .title{font-family:'Playfair Display',serif;font-size:58px;font-weight:900;color:#fff;margin-top:10px}
+  .header .sub{color:rgba(255,255,255,.4);font-size:17px;margin-top:10px}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+  .cards{position:absolute;top:270px;left:50%;transform:translateX(-50%);display:flex;gap:24px;z-index:10}
+  .card{width:310px;border-radius:24px;padding:36px 28px;display:flex;flex-direction:column;align-items:center;opacity:0;position:relative;overflow:hidden}
+  .card.c1{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);animation:cardUp 1s 1s cubic-bezier(.16,1,.3,1) forwards}
+  .card.c2{background:rgba(255,255,255,.06);border:2px solid rgba(209,61,113,.4);animation:cardUp 1s 1.4s cubic-bezier(.16,1,.3,1) forwards}
+  .card.c2::before{content:'';position:absolute;inset:-2px;border-radius:24px;background:linear-gradient(135deg,#d13d71,#0f9ddb);opacity:.15;z-index:-1;animation:pulse 3s 2s infinite ease-in-out}
+  .card.c3{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);animation:cardUp 1s 1.8s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes cardUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pulse{0%,100%{opacity:.15}50%{opacity:.3}}
+  .badge{position:absolute;top:0;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#d13d71,#0f9ddb);color:#fff;padding:6px 20px;border-radius:0 0 12px 12px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+  .ic{font-size:40px;margin:10px 0 12px}
+  .ct{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:4px}
+  .cd{font-size:13px;font-weight:600;letter-spacing:1px;background:linear-gradient(135deg,#d13d71,#0f9ddb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px}
+  .pr{display:flex;justify-content:space-between;width:100%;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .pr .t{color:rgba(255,255,255,.4);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+  .pr .a{color:#fff;font-size:22px;font-weight:800}
+  .fl{margin-top:20px;width:100%;display:flex;flex-direction:column;gap:10px}
+  .fi{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.55);font-size:13px;font-weight:500}
+  .ck{width:18px;height:18px;border-radius:50%;background:rgba(15,157,219,.15);color:#0f9ddb;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+  .bot{position:absolute;bottom:40px;left:0;right:0;text-align:center;z-index:10;opacity:0;animation:fi .8s 3s ease forwards}
+  .bot .br{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;background:linear-gradient(135deg,#d13d71,#0f9ddb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .bot .tg{color:rgba(255,255,255,.3);font-size:12px;margin-top:5px;letter-spacing:2px}
+  @keyframes fi{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+<div class="bg1"></div><div class="bg2"></div>
+<div class="header">
+  <div class="label">Subscription Plans</div>
+  <div class="title">Choose Your Plan</div>
+  <div class="sub">Uncomplicated pricing for exceptional food</div>
+</div>
+<div class="cards">
+  <div class="card c1">
+    <div class="ic">🌱</div><div class="ct">Daily Trial</div><div class="cd">1 Weekday</div>
+    <div class="pr"><span class="t">Pure Veg</span><span class="a">₹160</span></div>
+    <div class="pr"><span class="t">Non-Veg</span><span class="a">₹200</span></div>
+    <div class="fl">
+      <div class="fi"><span class="ck">✓</span>1 Fresh Meal</div>
+      <div class="fi"><span class="ck">✓</span>Valid Mon-Fri</div>
+      <div class="fi"><span class="ck">✓</span>₹10 Delivery Fee</div>
+    </div>
+  </div>
+  <div class="card c2">
+    <div class="badge">Most Popular</div>
+    <div class="ic">👑</div><div class="ct">Monthly Elite</div><div class="cd">24 Weekdays</div>
+    <div class="pr"><span class="t">Pure Veg</span><span class="a">₹3,520</span></div>
+    <div class="pr"><span class="t">Non-Veg</span><span class="a">₹4,400</span></div>
+    <div class="fl">
+      <div class="fi"><span class="ck">✓</span>Daily Fresh Meal</div>
+      <div class="fi"><span class="ck">✓</span>Zero Delivery Fee!</div>
+      <div class="fi"><span class="ck">✓</span>Zero Platform Fee!</div>
+      <div class="fi"><span class="ck">✓</span>Priority Support</div>
+    </div>
+  </div>
+  <div class="card c3">
+    <div class="ic">📅</div><div class="ct">Weekly</div><div class="cd">5 Weekdays</div>
+    <div class="pr"><span class="t">Pure Veg</span><span class="a">₹800</span></div>
+    <div class="pr"><span class="t">Non-Veg</span><span class="a">₹1,000</span></div>
+    <div class="fl">
+      <div class="fi"><span class="ck">✓</span>5 Fresh Meals</div>
+      <div class="fi"><span class="ck">✓</span>Mon-Fri Delivery</div>
+      <div class="fi"><span class="ck">✓</span>₹50 Delivery Fee</div>
+    </div>
+  </div>
+</div>
+<div class="bot">
+  <div class="br">Aharam</div>
+  <div class="tg">EFFORTLESS MEALS, AT YOUR DOOR</div>
+</div>
+</body>
+</html>

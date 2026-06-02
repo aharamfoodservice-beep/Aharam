@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aharam — Teal Amber</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1920px;overflow:hidden;background:#F0FFF4;font-family:'Inter',sans-serif;position:relative}
+  .orb{position:absolute;border-radius:50%;filter:blur(130px)}
+  .orb.t1{width:600px;height:600px;background:#009688;top:-150px;right:-100px;opacity:.08;animation:gp 7s infinite ease-in-out}
+  .orb.t2{width:500px;height:500px;background:#FF8F00;bottom:200px;left:-200px;opacity:.06;animation:gp 9s 3s infinite ease-in-out}
+  .orb.t3{width:400px;height:400px;background:#26A69A;top:50%;left:50%;opacity:.05;animation:gp 8s 5s infinite ease-in-out}
+  @keyframes gp{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+  /* Leaf decorations */
+  .leaf-deco{position:absolute;inset:0;overflow:hidden;opacity:.04}
+  .lf{position:absolute;fill:#009688}
+  .lf:nth-child(1){top:3%;left:5%;width:80px;transform:rotate(15deg)}.lf:nth-child(2){top:15%;right:5%;width:60px;transform:rotate(-30deg)}
+  .lf:nth-child(3){bottom:20%;left:3%;width:70px;transform:rotate(45deg)}.lf:nth-child(4){bottom:8%;right:8%;width:90px;transform:rotate(-15deg)}
+  .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;padding:100px 60px}
+  .eco-badge{display:flex;align-items:center;gap:12px;background:rgba(0,150,136,.06);border:1.5px solid rgba(0,150,136,.15);border-radius:60px;padding:14px 36px;opacity:0;animation:sd 1s .3s ease forwards}
+  .eco-badge .text{font-size:15px;font-weight:800;color:#00796B;letter-spacing:4px;text-transform:uppercase}
+  @keyframes sd{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+  .brand{font-family:'Playfair Display',serif;font-size:130px;font-weight:900;color:#00695C;margin-top:50px;opacity:0;animation:br 1.5s .8s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes br{from{opacity:0;transform:translateY(60px) scale(.85)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .tagline{font-size:17px;font-weight:600;color:rgba(0,105,92,.3);letter-spacing:8px;text-transform:uppercase;margin-top:12px;opacity:0;animation:fu 1s 1.8s ease forwards}
+  @keyframes fu{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  /* Nutrition circle */
+  .nutri-ring{width:380px;height:380px;border-radius:50%;border:3px solid rgba(0,150,136,.12);margin-top:50px;position:relative;display:flex;align-items:center;justify-content:center;opacity:0;animation:nr 1s 2.2s ease forwards}
+  @keyframes nr{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+  .nutri-ring::before{content:'';position:absolute;inset:20px;border-radius:50%;border:2px dashed rgba(0,150,136,.07)}
+  .nr-item{position:absolute;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0}
+  .nr-item .emoji{font-size:40px}.nr-item .label{font-size:12px;font-weight:700;color:#00796B;letter-spacing:1px;text-transform:uppercase}
+  .nr-item:nth-child(1){top:-25px;left:50%;transform:translateX(-50%);animation:pop .5s 2.5s ease forwards}
+  .nr-item:nth-child(2){top:22%;right:-30px;animation:pop .5s 2.7s ease forwards}
+  .nr-item:nth-child(3){bottom:22%;right:-30px;animation:pop .5s 2.9s ease forwards}
+  .nr-item:nth-child(4){bottom:-25px;left:50%;transform:translateX(-50%);animation:pop .5s 3.1s ease forwards}
+  .nr-item:nth-child(5){bottom:22%;left:-30px;animation:pop .5s 3.3s ease forwards}
+  .nr-item:nth-child(6){top:22%;left:-30px;animation:pop .5s 3.5s ease forwards}
+  @keyframes pop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+  .nr-center{font-size:70px;opacity:0;animation:pop .6s 3.7s ease forwards}
+  .headline{font-family:'Playfair Display',serif;font-size:64px;font-weight:700;color:#1B5E20;text-align:center;line-height:1.15;margin-top:50px;opacity:0;animation:fu 1.2s 3.9s ease forwards}
+  .headline .teal{color:#009688}
+  .sub{font-size:20px;color:rgba(0,105,92,.3);text-align:center;margin-top:20px;line-height:1.5;opacity:0;animation:fu 1s 4.4s ease forwards}
+  .cta{margin-top:50px;padding:24px 70px;background:linear-gradient(135deg,#00796B,#009688);color:#fff;font-size:19px;font-weight:800;letter-spacing:3px;text-transform:uppercase;border-radius:60px;box-shadow:0 16px 50px rgba(0,150,136,.2);opacity:0;animation:cp 1s 4.8s cubic-bezier(.16,1,.3,1) forwards;position:relative;overflow:hidden}
+  .cta::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,.12) 50%,transparent 60%);animation:sh 3s 5.5s infinite}
+  @keyframes sh{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+  @keyframes cp{from{opacity:0;transform:translateY(40px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .bottom{position:absolute;bottom:70px;left:0;right:0;display:flex;justify-content:center;gap:40px;z-index:10;opacity:0;animation:fu .8s 5.4s ease forwards}
+  .bp{background:rgba(0,150,136,.06);border:1px solid rgba(0,150,136,.12);border-radius:50px;padding:10px 24px;font-size:13px;font-weight:700;color:#00796B;display:flex;align-items:center;gap:8px}
+</style>
+</head>
+<body>
+  <div class="orb t1"></div><div class="orb t2"></div><div class="orb t3"></div>
+  <div class="leaf-deco">
+    <svg class="lf" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+    <svg class="lf" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+    <svg class="lf" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+    <svg class="lf" viewBox="0 0 24 24"><path d="M12 2C12 2 4 6 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 6 12 2 12 2Z"/></svg>
+  </div>
+  <div class="content">
+    <div class="eco-badge"><span style="font-size:24px">🌿</span><span class="text">Balanced Nutrition</span></div>
+    <div class="brand">Aharam</div>
+    <div class="tagline">Eat Well • Live Well</div>
+    <div class="nutri-ring">
+      <div class="nr-item"><div class="emoji">🍚</div><div class="label">Carbs</div></div>
+      <div class="nr-item"><div class="emoji">🥗</div><div class="label">Fiber</div></div>
+      <div class="nr-item"><div class="emoji">🫘</div><div class="label">Protein</div></div>
+      <div class="nr-item"><div class="emoji">🥛</div><div class="label">Calcium</div></div>
+      <div class="nr-item"><div class="emoji">🥕</div><div class="label">Vitamins</div></div>
+      <div class="nr-item"><div class="emoji">🫒</div><div class="label">Good Fats</div></div>
+      <div class="nr-center">🍽️</div>
+    </div>
+    <div class="headline">Balanced Meals,<br><span class="teal">Daily Delivered.</span></div>
+    <div class="sub">Complete nutrition in every box.<br>No junk, no shortcuts.</div>
+    <div class="cta">Eat Healthy Today</div>
+  </div>
+  <div class="bottom">
+    <div class="bp">🛡️ FSSAI Safe</div>
+    <div class="bp">⏰ On-Time</div>
+    <div class="bp">🧼 Hygienic</div>
+  </div>
+</body>
+</html>
